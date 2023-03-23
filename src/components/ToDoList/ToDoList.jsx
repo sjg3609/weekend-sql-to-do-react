@@ -2,26 +2,45 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function ToDoList() {
-    const [toDoList, setToDoList] = useState([]);
+    let [toDoListItem, setToDoListItem] = useState('');
+    const [toDoListArray, setToDoListArray] = useState([]);
+    
+    const fetchToDoList = () => {
+        axios.get('/todo').then((response) => {
+            setToDoListArray(response.data);
+            }).catch((error) => {
+                console.log(`Error in GET: ${error}`);
+                alert(`Something went wrong in GET!`);
+            });
 
-    axios.get('/todo').then((response) => {
-        setToDoList(response.data);
-        }).catch((error) => {
-            console.log(`Error in GET: ${error}`);
-            alert(`Something went wrong in GET!`);
-        });
-
-
+    }
+    
+    useEffect(() => {
+        fetchToDoList();
+    }, []);
 
     return (
-        <table>
-            <tr>
-                <th>Task</th>
-                <th>Completed</th>
-                <th>Delete</th>
-            </tr>
+        <div>
+            <h2>To Do List:</h2>
+            <ul>
+                {
+                    toDoListArray.map((item) => (
+                        <div id="toDoList">
+                            <li key={item.id}>{item.task}</li>
+                            <button onClick={(e) => completeTask()}>Complete</button>
+                        </div>
+                        
+                    ))
+                }
+            </ul>
+                
 
-        </table>
+            
+               
+                
+            
+        </div>
+       
     )
 
 };

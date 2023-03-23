@@ -1,9 +1,9 @@
 CREATE TABLE "todo" (
 	"id"  SERIAL PRIMARY KEY,
 	"task" VARCHAR (2048),
-	"complete" VARCHAR (24)
+	"complete" BOOLEAN DEFAULT 'false'
 
 );
 
-INSERT INTO "todo" ("task", "complete")
-VALUES ('Fold Laundry', 'Uncompleted'); 
+INSERT INTO "todo" ("task")
+VALUES ('Fold Laundry'); 

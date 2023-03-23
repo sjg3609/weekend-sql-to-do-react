@@ -14,9 +14,9 @@ function ToDoListItem({item, fetchToDoList}) {
         });
     }
 
-    const deleteTask = (e) => {
+    const deleteTask = (e) => { 
+        console.log(`delete task ${item.id}`);
         axios.delete(`/todo/${item.id}`).then((response) => {
-            console.log(response);
             fetchToDoList();
         }).catch((error) => {
             console.log(`Error in deleteTask ${error}`);
@@ -25,7 +25,7 @@ function ToDoListItem({item, fetchToDoList}) {
     }
     return (
         <>
-            <li key={item.id}>{item.task}</li>
+            <li>{item.task}</li>
                  <button onClick={(e) => completeTask()}>Complete</button>
                 <button onClick={(e) => deleteTask()}>Delete</button>
         </>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ToDoListItem from './ToDoListItem';
+import ToDoListForm from './ToDoListForm';
 
 function ToDoList() {
     let [toDoListItem, setToDoListItem] = useState('');
@@ -23,6 +24,12 @@ function ToDoList() {
 
     return (
         <div>
+            <h2>Add a Task:</h2>
+            <ToDoListForm 
+                toDoListItem={toDoListItem}
+                setToDoListItem={setToDoListItem}
+                fetchToDoList={fetchToDoList}
+            />
             <h2>To Do List:</h2>
             <ul>
                 {

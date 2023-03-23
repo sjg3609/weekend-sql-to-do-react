@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log('POST request made for /todo');
     let toAdd = req.body;
-    const queryText = `INSERT INTO "todo" ("task", "complete")
-                       VALUES ($1, $2);`;
+    const queryText = `INSERT INTO "todo" ("task")
+                       VALUES ($1);`;
     pool.query(queryText, [toAdd.task]).then((result) => {
         res.sendStatus(201);
     }).catch((error) => {

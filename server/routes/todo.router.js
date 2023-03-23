@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
 router.put('/completed/:id', (req, res) => {
     let toDoID = Number(req.params.id);
     let toDoEdit = req.params.body;
-    const queryText = `UPDATE "todo" SET "complete" = 'Uncompleted' WHERE "id" = $1;`;
+    const queryText = `UPDATE "todo" SET "complete" = 'true' WHERE "id" = $1;`;
     pool.query(queryText, [toDoID]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
@@ -46,7 +46,7 @@ router.put('/completed/:id', (req, res) => {
 router.put('/uncompleted/:id', (req, res) => {
     let toDoID = Number(req.params.id);
     let toDoEdit = req.params.body;
-    const queryText = `UPDATE "todo" SET "complete" = 'Completed' WHERE "id" = $1;`;
+    const queryText = `UPDATE "todo" SET "complete" = 'false' WHERE "id" = $1;`;
     pool.query(queryText, [toDoID]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {

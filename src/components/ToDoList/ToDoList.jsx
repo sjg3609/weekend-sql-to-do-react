@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import ToDoListItem from './ToDoListItem';
 
 function ToDoList() {
     let [toDoListItem, setToDoListItem] = useState('');
@@ -19,6 +20,7 @@ function ToDoList() {
         fetchToDoList();
     }, []);
 
+
     return (
         <div>
             <h2>To Do List:</h2>
@@ -26,8 +28,11 @@ function ToDoList() {
                 {
                     toDoListArray.map((item) => (
                         <div id="toDoList">
-                            <li key={item.id}>{item.task}</li>
-                            <button onClick={(e) => completeTask()}>Complete</button>
+                            <ToDoListItem 
+                                key={item.id}
+                                item={item}
+                                fetchToDoList={fetchToDoList}
+                            />
                         </div>
                         
                     ))

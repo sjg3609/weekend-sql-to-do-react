@@ -23,9 +23,18 @@ function ToDoListItem({item, fetchToDoList}) {
             alert('Something went wrong in deleteTask!');
         })
     }
+
+    const getDecoration = () => {
+        if(item.complete === true) {
+            return 'line-through';
+        } else {
+            return 'none';
+        }
+    }
+
     return (
         <>
-            <li>{item.task}</li>
+            <li style={{textDecoration: getDecoration()}}>{item.task}</li>
                  <button onClick={(e) => completeTask()}>Complete</button>
                 <button onClick={(e) => deleteTask()}>Delete</button>
         </>

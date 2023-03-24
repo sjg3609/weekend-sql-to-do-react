@@ -15,15 +15,13 @@ function ToDoListForm({toDoListItem, setToDoListItem, fetchToDoList}) {
         })
     }
 
-    
-
     return (
-        <>
+        <div className="toDoForm">
         <form onSubmit={submitForm}>
             Task: <input type="text" value={toDoListItem} onChange={(e) => setToDoListItem(e.target.value)} />
             <input type="submit" value="Submit" />
         </form>
-        </>
+        </div>
     );
 }
 

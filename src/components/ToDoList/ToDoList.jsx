@@ -23,7 +23,7 @@ function ToDoList() {
 
 
     return (
-        <div>
+        <div className="toDoListForm">
             <h2>Add a Task:</h2>
             <ToDoListForm 
                 toDoListItem={toDoListItem}
@@ -34,7 +34,7 @@ function ToDoList() {
             <ul>
                 {
                     toDoListArray.map((item) => (
-                        <div id="toDoList">
+                        <div id="toDoListItem">
                             <ToDoListItem 
                                 key={item.id}
                                 item={item}
@@ -45,12 +45,6 @@ function ToDoList() {
                     ))
                 }
             </ul>
-                
-
-            
-               
-                
-            
         </div>
        
     )

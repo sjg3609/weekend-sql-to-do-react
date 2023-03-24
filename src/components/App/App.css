@@ -21,3 +21,36 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+h1 {
+  text-align: center;
+  background-color: black;
+  color: aqua;
+  padding: 2em;
+  margin: auto;
+
+}
+
+h2 {
+  text-align: center;
+
+}
+
+#toDoForm {
+  justify-content: center;
+}
+
+form {
+  text-align: center;
+}
+
+#toDoListItem {
+  text-align: center;
+  font-weight: bolder;
+
+}
+
+
+ul {
+  text-align: center;
+}

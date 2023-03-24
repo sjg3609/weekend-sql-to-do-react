@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 
 // PUT
 
-router.put('/completed/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     let toDoID = Number(req.params.id);
     let toDoEdit = req.params.body;
     const queryText = `UPDATE "todo" SET "complete" = 'true' WHERE "id" = $1;`;
@@ -43,17 +43,20 @@ router.put('/completed/:id', (req, res) => {
     });
 });
 
-router.put('/uncompleted/:id', (req, res) => {
-    let toDoID = Number(req.params.id);
-    let toDoEdit = req.params.body;
-    const queryText = `UPDATE "todo" SET "complete" = 'false';`;
-    pool.query(queryText, [toDoID]).then((result) => {
-        res.sendStatus(200);
-    }).catch((error) => {
-        console.log(`Error trying to PUT ${error}`);
-        res.sendStatus(500);
-    });
-});
+// Commented this out for now because I believe since the database automatically assigns the tasks
+// as false, we don't need to toggle it back. Only set it to complete
+
+// router.put('/uncompleted/:id', (req, res) => {
+//     let toDoID = Number(req.params.id);
+//     let toDoEdit = req.params.body;
+//     const queryText = `UPDATE "todo" SET "complete" = 'false';`;
+//     pool.query(queryText, [toDoID]).then((result) => {
+//         res.sendStatus(200);
+//     }).catch((error) => {
+//         console.log(`Error trying to PUT ${error}`);
+//         res.sendStatus(500);
+//     });
+// });
 
 // DELETE
 

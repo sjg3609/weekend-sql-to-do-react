@@ -2,7 +2,7 @@ import axios from 'axios'
 
 function ToDoListForm({toDoListItem, setToDoListItem, fetchToDoList}) {
     
-       const submitForm = (e) => {
+    const submitForm = (e) => {
         e.preventDefault();
         axios.post('/todo', {
             task: toDoListItem

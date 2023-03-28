@@ -22,9 +22,11 @@
   to { transform: rotate(360deg); }
 }
 
+
+
 h1 {
   text-align: center;
-  background-color: green;
+  background-color: blue;
   color: white;
   padding: 2em;
   margin: auto;
@@ -47,6 +49,7 @@ form {
 #toDoListItem {
   text-align: center;
   font-weight: bolder;
+  font-size: large;
 
 }
 
@@ -54,5 +57,14 @@ form {
 ul {
   text-align: center;
   list-style-position: inside;
+  padding: 10px;
+  background: blue;
+  margin: auto;
   
+}
+
+ul li {
+  background: lightblue;
+  padding: 10px;
+
 }

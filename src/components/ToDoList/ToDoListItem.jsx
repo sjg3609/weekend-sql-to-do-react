@@ -34,9 +34,12 @@ function ToDoListItem({item, fetchToDoList}) {
 
     return (
         <>
-            <li style={{textDecoration: getDecoration()}}>{item.task}</li>
-                 <button onClick={(e) => completeTask()}>Complete</button>
+            <li style={{textDecoration: getDecoration()}}>{item.task}
+            <br/>
+                <button onClick={(e) => completeTask()}>Complete</button>
+                
                 <button onClick={(e) => deleteTask()}>Delete</button>
+            </li>
         </>
     );
 }

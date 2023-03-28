@@ -24,8 +24,8 @@
 
 h1 {
   text-align: center;
-  background-color: black;
-  color: aqua;
+  background-color: green;
+  color: white;
   padding: 2em;
   margin: auto;
 
@@ -36,9 +36,9 @@ h2 {
 
 }
 
-#toDoForm {
+/* #toDoForm {
   justify-content: center;
-}
+} */
 
 form {
   text-align: center;

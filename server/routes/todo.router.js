@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
 
 // PUT
 
-router.put('/:id', (req, res) => {
+router.put('/completed/:id', (req, res) => {
     let toDoID = Number(req.params.id);
     let toDoEdit = req.params.body;
     const queryText = `UPDATE "todo" SET "complete" = 'true' WHERE "id" = $1;`;
